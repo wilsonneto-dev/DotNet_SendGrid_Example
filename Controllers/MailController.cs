@@ -20,9 +20,9 @@ public class MailController : ControllerBase
     {
         var apiKey = config.GetValue<string>("SendGrid:ApiKey");
         var client = new SendGridClient(apiKey);
-        var from = new EmailAddress("no-reply@devs2world.io", "Devs2World");
+        var from = new EmailAddress("no-reply@email.io", "Sender");
         var subject = "Sending with SendGrid is Fun";
-        var to = new EmailAddress("contato@wilsonneto.com.br", "Wilson Neto");
+        var to = new EmailAddress("contato@test.com.br", "User");
         var plainTextContent = text;
         var htmlContent = "<strong>and easy to do anywhere, even with C#</strong>";
         var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
